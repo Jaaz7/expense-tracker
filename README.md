@@ -1,0 +1,1 @@
+background image: https://www.freepik.com/free-vector/piggy-bank-with-gold-coins-3d-cartoon-style-icon-saving-investing-accumulating-money-flat-vector-illustration-income-finance-banking-wealth-currency-concept_29119345.htm#page=2&query=piggy&position=38&from_view=search&track=sph

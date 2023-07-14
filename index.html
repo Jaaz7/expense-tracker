@@ -8,7 +8,7 @@
     <meta name="keywords" content="expense, tracker">
     <meta name="author" content="Jaaziel do Vale">
 
-    <!-- font awesome and google fonts -->
+    <!-- font awesome -->
 
 
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -17,5 +17,51 @@
 
 <body>
 
+    <h1>Expense Tracker</h1>
+    <main id="main">
+
+        <div id="app-header">
+            <div id="total-balance">
+                <span>TOTAL BALANCE<br></span>
+                <span id="total">€0.00</span>
+            </div>
+            <div id="income-expense">
+                <div id="app-income">
+                    <span>INCOME<br></span>
+                    <span id="income">+€0.00</span>
+                </div>
+                <div id="app-expense">
+                    <span>EXPENSE<br></span>
+                    <span id="expense">-€0.00</span>
+                </div>
+            </div>
+        </div>
+        <form>
+            <div id="app-body">
+                <div>
+                    <label for="exp">Enter Expense<br></label>
+                    <input type="text" id="exp" required placeholder="The Hitchhiker's Guide to the Galaxy" />
+                </div>
+                <div id="date-amount">
+                    <div>
+                        <label for="date" required>Enter Date<br></label>
+                        <input type="date" id="date" />
+                    </div>
+                    <div>
+                        <label for="amount">Enter Expense<br></label>
+                        <input type="number" id="amount" required placeholder="42" />
+                    </div>
+                </div>
+                <div id="submit-div">
+                    <button type="submit" id="submit" aria-label="submit button">Submit</button>
+                </div>
+            </div>
+        </form>
+
+    </main>
+
     <script src="assets/js/script.js"></script>
+
 </body>
+
+</html>
