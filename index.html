@@ -40,16 +40,16 @@
             <div id="app-body">
                 <div>
                     <label class="body-text" for="name">Name<br></label>
-                    <input type="text" id="name" required placeholder="The Hitchhiker's Guide to the Galaxy" />
+                    <input type="text" id="name" required placeholder="Book: The Hitchhiker's Guide to the Galaxy" />
                 </div>
                 <div id="date-amount">
                     <div>
                         <label class="body-text" for="date" required>Date<br></label>
-                        <input type="date" id="date" />
+                        <input type="date" required id="date" />
                     </div>
                     <div>
-                        <label class="body-text" for="amount">Expense<br></label>
-                        <input type="number" id="amount" required placeholder="42" />
+                        <label class="body-text" for="amount">Value<br></label>
+                        <input type="number" step="any" inputmode="numeric" pattern="[0-9\.]*" id="amount" required placeholder="42" />
                     </div>
                 </div>
                 <div id="submit-div">
@@ -57,7 +57,7 @@
                 </div>
             </div>
         </form>
-
+        <div id="list"></div>
     </main>
 
     <script src="assets/js/script.js"></script>

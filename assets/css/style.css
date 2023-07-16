@@ -122,17 +122,42 @@ h1 {
 #name {
     width: 400px;
     height: 40px;
-    font-size: 23px;
+    font-size: 19px;
+    font-weight: 600;
+    border-width: 3px;
+    border: 5px solid rgb(16, 92, 127);
+}
+
+#name:focus {
+    border-color: rgb(46, 171, 0);
 }
 
 #date {
     width: 200px;
     height: 40px;
     font-size: 23px;
+    border-width: 3px;
+    border: 5px solid rgb(16, 92, 127);
+}
+
+#date:focus {
+    border-color: rgb(46, 171, 0);
 }
 
 #amount {
     width: 150px;
     height: 40px;
     font-size: 23px;
+    font-weight: 600;
+    border-width: 3px;
+    border: 5px solid rgb(16, 92, 127);
+}
+
+#amount:focus {
+    border-color: rgb(46, 171, 0);
+}
+
+/* hiding the up and down arrows in number input */
+input[type="number"]::-webkit-inner-spin-button {
+    display: none;
 }
