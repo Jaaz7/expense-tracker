@@ -22,38 +22,38 @@
 
         <div id="app-header">
             <div id="total-balance">
-                <span>TOTAL BALANCE<br></span>
-                <span id="total">€0.00</span>
+                <span class="header-text">TOTAL BALANCE<br></span>
+                <span class="header-total" id="total">€0.00</span>
             </div>
             <div id="income-expense">
                 <div id="app-income">
-                    <span>INCOME<br></span>
-                    <span id="income">+€0.00</span>
+                    <span class="header-text">INCOME<br></span>
+                    <span class="header-numbers" id="income">+€0.00</span>
                 </div>
                 <div id="app-expense">
-                    <span>EXPENSE<br></span>
-                    <span id="expense">-€0.00</span>
+                    <span class="header-text">EXPENSE<br></span>
+                    <span class="header-numbers" id="expense">-€0.00</span>
                 </div>
             </div>
         </div>
         <form>
             <div id="app-body">
                 <div>
-                    <label for="exp">Enter Expense<br></label>
-                    <input type="text" id="exp" required placeholder="The Hitchhiker's Guide to the Galaxy" />
+                    <label class="body-text" for="name">Name<br></label>
+                    <input type="text" id="name" required placeholder="The Hitchhiker's Guide to the Galaxy" />
                 </div>
                 <div id="date-amount">
                     <div>
-                        <label for="date" required>Enter Date<br></label>
+                        <label class="body-text" for="date" required>Date<br></label>
                         <input type="date" id="date" />
                     </div>
                     <div>
-                        <label for="amount">Enter Expense<br></label>
+                        <label class="body-text" for="amount">Expense<br></label>
                         <input type="number" id="amount" required placeholder="42" />
                     </div>
                 </div>
                 <div id="submit-div">
-                    <button type="submit" id="submit" aria-label="submit button">Submit</button>
+                    <button type="submit" id="submit" aria-label="submit button">SUBMIT</button>
                 </div>
             </div>
         </form>

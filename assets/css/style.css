@@ -39,12 +39,14 @@ h1 {
 }
 
 #app-header {
-    background-color: rgb(191, 209, 218);
+    background-color: rgb(16, 92, 127);
     padding: 30px;
 }
 
 #app-body {
     padding: 30px;
+    text-align: center;
+    background-color: rgb(202, 222, 231);
 }
 
 #total-balance {
@@ -58,15 +60,18 @@ h1 {
 
 #app-income {
     margin-left: 10%;
+    text-align: center;
 }
 
 #app-expense {
     margin-right: 10%;
+    text-align: center;
 }
 
 #date-amount {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 45px;
     margin-top: 20px;
 }
 
@@ -77,6 +82,57 @@ h1 {
 
 }
 
-button {
+#submit {
     padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: rgb(16, 92, 127);
+    color: white;
+    font-weight: 700;
+}
+
+.header-text {
+    color: rgb(255, 255, 255);
+    font-family: Impact, sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.header-total {
+    color: rgb(255, 255, 255);
+    font-family: Impact, sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+}
+
+.header-numbers {
+    color: rgb(255, 255, 255);
+    font-family: Impact, sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+}
+
+.body-text {
+    color: rgb(0, 0, 0);
+    font-family: Impact, sans-serif;
+    font-weight: 600;
+    font-size: 26px;
+}
+
+#name {
+    width: 400px;
+    height: 40px;
+    font-size: 23px;
+}
+
+#date {
+    width: 200px;
+    height: 40px;
+    font-size: 23px;
+}
+
+#amount {
+    width: 150px;
+    height: 40px;
+    font-size: 23px;
 }
