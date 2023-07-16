@@ -91,6 +91,14 @@ h1 {
     font-weight: 700;
 }
 
+#submit:hover {
+    cursor: pointer;
+}
+
+#submit:active {
+    background-color: rgb(46, 171, 0);
+}
+
 .header-text {
     color: rgb(255, 255, 255);
     font-family: Impact, sans-serif;
@@ -160,4 +168,41 @@ h1 {
 /* hiding the up and down arrows in number input */
 input[type="number"]::-webkit-inner-spin-button {
     display: none;
+}
+/* Stylizing the table */
+#table {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    min-width: 100%;
+}
+
+#table thead tr {
+    background-color: rgb(16, 92, 127);
+    color: white;
+    text-align: left;
+    font-weight: bold;
+    font-family: Impact, sans-serif;
+    font-size: 30px;
+}
+
+#table tbody td {
+    font-size: 20px;
+    font-family: Impact, sans-serif;
+}
+
+#table th,
+#table td {
+    padding: 12px 15px;
+}
+
+#table tbody tr {
+    border-bottom: 1px solid #b2b2b2;
+}
+
+#table tbody tr:nth-of-type(even) {
+    background-color: #efefef;
+}
+
+#table tbody tr:last-of-type {
+    border-bottom: 2px solid rgb(16, 92, 127);
 }

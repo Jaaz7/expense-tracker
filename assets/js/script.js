@@ -12,8 +12,8 @@ function runTable() {
     const values = [];
     const name = document.getElementById('name').value;
     const date = document.getElementById('date').value;
-    const expense = parseFloat(document.getElementById('amount').value).toFixed(2);
-    if (expense >= 100000) {
+    const amount = parseFloat(document.getElementById('amount').value).toFixed(2);
+    if (amount >= 100000) {
         alert('Value number is too big.');
     } else {
         valueConfig();
@@ -42,7 +42,7 @@ function runTable() {
                     ${date}
                 </td>
                 <td>
-                    ${expense}
+                    ${amount}
                 </td>
             </tr>
         </tbody>
@@ -70,13 +70,23 @@ function setMaxDate() {
 }
 
 function valueConfig() {
-    const entryValue = parseFloat(document.getElementById('amount').value).toFixed(2);
-    const innerTotalValue = document.getElementById('total').innerHTML;
-    const totalValue = parseFloat(innerTotalValue.match((/(\d+)/)));
-    const innerIncome = document.getElementById('income').innerHTML;
-    const innerExpense = document.getElementById('expense').innerHTML;
-    console.log(entryValue);
-    console.log(totalValue);
-    console.log(income);
-    console.log(expense);
+    //Getting the value from the form
+    const entryValue = Math.round(document.getElementById('amount').value * 1e2) / 1e2;
+
+    //assigning variables to the HTML elements from the app header
+    let innerTotalValue = document.getElementById('total');
+    let innerIncome = document.getElementById('income');
+    let innerExpense = document.getElementById('expense');
+
+    //assigning the number variables which will be dynamic
+    const totalValue = Math.round(innerTotalValue.innerHTML * 1e2) / 1e2;
+    const income = Math.round(innerIncome.innerHTML * 1e2) / 1e2;
+    const expense = Math.round(innerExpense.innerHTML * 1e2) / 1e2;
+    innerTotalValue.innerHTML = totalValue + entryValue;
+    if (entryValue < 0) {
+        const inverted = Math.abs(entryValue);
+        innerExpense.innerHTML = expense + inverted;
+    } else {
+        innerIncome.innerHTML = income + entryValue;
+    }
 }

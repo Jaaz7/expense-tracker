@@ -23,21 +23,27 @@
         <div id="app-header">
             <div id="total-balance">
                 <span class="header-text">TOTAL BALANCE<br></span>
-                <span class="header-total" id="total">€0.00</span>
+                <span class="header-total">€<span id="total">0.00</span></span>
             </div>
             <div id="income-expense">
                 <div id="app-income">
                     <span class="header-text">INCOME<br></span>
-                    <span class="header-numbers" id="income">+€0.00</span>
+                    <span class="header-numbers">+€<span id="income">0.00</span></span>
                 </div>
                 <div id="app-expense">
                     <span class="header-text">EXPENSE<br></span>
-                    <span class="header-numbers" id="expense">-€0.00</span>
+                    <span class="header-numbers">-€<span id="expense">0.00</span></span>
                 </div>
             </div>
         </div>
         <form>
             <div id="app-body">
+                <div id="container">
+                    <span>INCOME</span>
+                    <input type="checkbox" aria-label="toggle switch" />
+                    <span>EXPENSE</span>
+                    <!-- toggle switch -->
+                </div>
                 <div>
                     <label class="body-text" for="name">Name<br></label>
                     <input type="text" id="name" required placeholder="Book: The Hitchhiker's Guide to the Galaxy" />
@@ -49,7 +55,8 @@
                     </div>
                     <div>
                         <label class="body-text" for="amount">Value<br></label>
-                        <input type="number" step="any" inputmode="numeric" pattern="[0-9\.]*" id="amount" required placeholder="42" />
+                        <input type="number" step="any" inputmode="numeric" pattern="[0-9\.]*" id="amount" required
+                            placeholder="42" />
                     </div>
                 </div>
                 <div id="submit-div">
