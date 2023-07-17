@@ -78,33 +78,24 @@ function valueConfig() {
  * to show inside the table with the function addTable()
  */
 function displayTableData() {
+    const values = [];
+    const name = document.getElementById('name').value;
+    const date = document.getElementById('date').value;
+    const amountNumber = Math.round(document.getElementById('amount').value * 1e2) / 1e2;
+    const type = (document.querySelector('#check').checked);
 
+    if (type) {
+        let id = values.length + 1;
+        values.push({ number: id, name: name, date: date, value: amountNumber, type: 'Income' });
+    } else {
+        let id = values.length + 1;
+        values.push({ number: id, name: name, date: date, value: amountNumber, type: 'Expense' });
+    }
+    return values;
 }
 
 function addTable() {
-    let values = [
-        {
-            number: 1,
-            name: 'groceries',
-            date: new Date(),
-            value: 30,
-            type: 'expense'
-        },
-        {
-            number: 2,
-            name: 'haircut',
-            date: new Date(),
-            value: 15,
-            type: 'expense'
-        },
-        {
-            number: 3,
-            name: 'salary',
-            date: new Date(date).toLocaleDateString(),
-            value: 3000,
-            type: 'income'
-        },
-    ];
+    let array = displayTableData();
     let html = `
         <table id="table">
             <thead>
@@ -128,14 +119,13 @@ function addTable() {
             </thead>
             <tbody>
             `;
-    for (let i = 0; i < values.length; i++) {
-        let idNum = i + 1;
+    for (let i = 0; i < array.length; i++) {
         html += '<tr>';
-        html += '<td>' + idNum + '</td>';
-        html += '<td>' + values[i].name + '</td>';
-        html += '<td>' + values[i].date + '</td>';
-        html += '<td>' + values[i].value + '</td>';
-        html += '<td>' + values[i].type + '</td>';
+        html += '<td>' + array[i].number + '</td>';
+        html += '<td>' + array[i].name + '</td>';
+        html += '<td>' + array[i].date + '</td>';
+        html += '<td>' + array[i].value + '</td>';
+        html += '<td>' + array[i].type + '</td>';
     }
     html += `
             </tr>
@@ -145,32 +135,3 @@ function addTable() {
     const list = document.getElementById('list').innerHTML = html;
 
 }
-
-// function addRow() {
-//     let values = [];
-
-//     for (let value of values) {
-//         let object = {};
-//         let number = 0;
-//         object.id = number + 1;
-//         object.name = document.getElementById('name').value;
-//         object.date = document.getElementById('date').toLocaleDateString();
-//         object.amount = Math.round(document.getElementById('amount').value * 1e2) / 1e2;
-//         if (document.querySelector('#check').checked) {
-//             object.type = 'Income';
-//         } else {
-//             object.type = 'Expense';
-//         }
-//         console.log(values);
-//         let rowHtml = `
-//         <tr>
-//             <td>${value.name}</td>
-//             <td>${value.date}</td>
-//             <td>${value.amount}</td>
-//             <td>${value.type}</td>
-//         </tr>
-//         `;
-//         const tbody = document.getElementsByTagName('tbody')[0];
-//         tbody.innerHTML += rowHtml;
-//     }
-// }
