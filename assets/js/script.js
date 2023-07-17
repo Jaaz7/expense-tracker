@@ -4,8 +4,18 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
         start();
     })
+
     document.getElementById('name').focus();
     setMaxDate();
+
+    document.getElementById('table').addEventListener('click', function (e) {
+        if (!e.target.classList.contains('delete-btn')) {
+            return;
+        } else {
+            const btn = e.target;
+            btn.closest('tr').remove();
+        }
+    });
 })
 
 /**
@@ -17,11 +27,11 @@ function start() {
     const amountString = String(document.getElementById('amount').value);
     if (amount >= 100000) {
         alert('Value number is too big.');
-    } else if (amountString.includes('-' && 'e')) {
-        alert("Negative numbers and special characters aren't allowed.");
+    } else if (amountString.includes('-')) {
+        alert("Negative numbers aren't allowed.");
     } else {
         valueConfig();
-        addTable();
+        onAddTable();
     }
     document.getElementById('name').value = '';
     document.getElementById('name').focus();
@@ -73,65 +83,30 @@ function valueConfig() {
     }
 }
 
-/**
- * capture the inserted data and set to an array so it's prepared
- * to show inside the table with the function addTable()
- */
-function displayTableData() {
-    const values = [];
+function onAddTable() {
+    document.querySelector('#no-values').style.display = 'none';
+    document.querySelector('#table').style.display = 'inline-table';
+
+    const tbodyEl = document.querySelector('tbody');
     const name = document.getElementById('name').value;
     const date = document.getElementById('date').value;
     const amountNumber = Math.round(document.getElementById('amount').value * 1e2) / 1e2;
     const type = (document.querySelector('#check').checked);
+    let typeString = '';
 
     if (type) {
-        let id = values.length + 1;
-        values.push({ number: id, name: name, date: date, value: amountNumber, type: 'Income' });
+        typeString = 'Income';
     } else {
-        let id = values.length + 1;
-        values.push({ number: id, name: name, date: date, value: amountNumber, type: 'Expense' });
+        typeString = 'Expense';
     }
-    return values;
-}
 
-function addTable() {
-    let array = displayTableData();
-    let html = `
-        <table id="table">
-            <thead>
-                <tr>
-                    <th>
-                        No.
-                    </th>
-                    <th>
-                        Name
-                    </th>
-                    <th>
-                        Date
-                    </th>
-                    <th>
-                        Value
-                    </th>
-                    <th>
-                        Type
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-            `;
-    for (let i = 0; i < array.length; i++) {
-        html += '<tr>';
-        html += '<td>' + array[i].number + '</td>';
-        html += '<td>' + array[i].name + '</td>';
-        html += '<td>' + array[i].date + '</td>';
-        html += '<td>' + array[i].value + '</td>';
-        html += '<td>' + array[i].type + '</td>';
-    }
-    html += `
-            </tr>
-            </tbody>
-            </table>
-            `;
-    const list = document.getElementById('list').innerHTML = html;
-
+    tbodyEl.innerHTML += `
+    <tr>
+        <td>${name}</td>
+        <td>${date}</td>
+        <td>${amountNumber}</td>
+        <td>${typeString}</td>
+        <td><button class="delete-btn">Delete</button</td>
+    </tr>
+    `;
 }
