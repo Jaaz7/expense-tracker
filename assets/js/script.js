@@ -12,9 +12,12 @@ function runTable() {
     const values = [];
     const name = document.getElementById('name').value;
     const date = document.getElementById('date').value;
-    const amount = parseFloat(document.getElementById('amount').value).toFixed(2);
+    const amount = Math.round(document.getElementById('amount').value * 1e2) / 1e2;
+    const amountString = String(document.getElementById('amount').value);
     if (amount >= 100000) {
         alert('Value number is too big.');
+    } else if (amountString.includes('-')) {
+        alert("Negative numbers aren't allowed.");
     } else {
         valueConfig();
         const list = document.getElementById('list');
@@ -34,17 +37,6 @@ function runTable() {
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>
-                    ${name}
-                </td>
-                <td>
-                    ${date}
-                </td>
-                <td>
-                    ${amount}
-                </td>
-            </tr>
         </tbody>
     </table>`;
     }
@@ -82,11 +74,16 @@ function valueConfig() {
     const totalValue = Math.round(innerTotalValue.innerHTML * 1e2) / 1e2;
     const income = Math.round(innerIncome.innerHTML * 1e2) / 1e2;
     const expense = Math.round(innerExpense.innerHTML * 1e2) / 1e2;
-    innerTotalValue.innerHTML = totalValue + entryValue;
-    if (entryValue < 0) {
-        const inverted = Math.abs(entryValue);
-        innerExpense.innerHTML = expense + inverted;
-    } else {
+    //getting the toggle button info and ajust numbers on expense || income
+    if (document.querySelector('#check').checked) {
         innerIncome.innerHTML = income + entryValue;
+        innerTotalValue.innerHTML = totalValue + entryValue;
+    } else {
+        innerExpense.innerHTML = expense + entryValue;
+        innerTotalValue.innerHTML = totalValue - entryValue;
     }
+}
+
+function addRow() {
+
 }

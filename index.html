@@ -23,7 +23,7 @@
         <div id="app-header">
             <div id="total-balance">
                 <span class="header-text">TOTAL BALANCE<br></span>
-                <span class="header-total">€<span id="total">0.00</span></span>
+                <span class="header-total"><span id="total">0.00</span>€</span>
             </div>
             <div id="income-expense">
                 <div id="app-income">
@@ -39,14 +39,16 @@
         <form>
             <div id="app-body">
                 <div id="container">
-                    <span>INCOME</span>
-                    <input type="checkbox" aria-label="toggle switch" />
-                    <span>EXPENSE</span>
+                    <span>Income</span>
+                    <input id="check" type="checkbox" aria-label="toggle switch" />
+                    <label for="check" class="check-btn"></label>
+                    <span>Expense</span>
                     <!-- toggle switch -->
                 </div>
                 <div>
                     <label class="body-text" for="name">Name<br></label>
-                    <input type="text" id="name" required placeholder="Book: The Hitchhiker's Guide to the Galaxy" />
+                    <input type="text" id="name" autocomplete="off" required
+                        placeholder="Book: The Hitchhiker's Guide to the Galaxy" />
                 </div>
                 <div id="date-amount">
                     <div>
@@ -55,8 +57,8 @@
                     </div>
                     <div>
                         <label class="body-text" for="amount">Value<br></label>
-                        <input type="number" step="any" inputmode="numeric" pattern="[0-9\.]*" id="amount" required
-                            placeholder="42" />
+                        <input type="number" step="any" inputmode="numeric" pattern="[0-9\.]*" autocomplete="off"
+                            id="amount" required placeholder="42" />
                     </div>
                 </div>
                 <div id="submit-div">
@@ -64,7 +66,9 @@
                 </div>
             </div>
         </form>
-        <div id="list"></div>
+        <div id="list">
+            <div id="no-values">No Values</div>
+        </div>
     </main>
 
     <script src="assets/js/script.js"></script>

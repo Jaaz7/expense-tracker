@@ -71,7 +71,7 @@ h1 {
 #date-amount {
     display: flex;
     justify-content: center;
-    gap: 45px;
+    gap: 40px;
     margin-top: 20px;
 }
 
@@ -169,6 +169,7 @@ h1 {
 input[type="number"]::-webkit-inner-spin-button {
     display: none;
 }
+
 /* Stylizing the table */
 #table {
     border-collapse: collapse;
@@ -199,10 +200,62 @@ input[type="number"]::-webkit-inner-spin-button {
     border-bottom: 1px solid #b2b2b2;
 }
 
+/* make the table background change every even number of rows */
 #table tbody tr:nth-of-type(even) {
     background-color: #efefef;
 }
 
 #table tbody tr:last-of-type {
     border-bottom: 2px solid rgb(16, 92, 127);
+}
+
+#no-values {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    font-family: Impact, sans-serif;
+    font-size: 2em;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+#container span {
+    vertical-align: center;
+    font-weight: bold;
+    padding: 10px;
+    font-family: Impact, sans-serif;
+    font-size: 25px;
+}
+
+.check-btn {
+    width: 100px;
+    background-color: rgb(16, 92, 127);
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50px;
+    position: relative;
+    transition: 0.2;
+}
+
+.check-btn::before {
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    margin: 5px;
+    transition: 0.2s;
+}
+
+input:checked+.check-btn::before {
+    transform: translateX(-50px);
+}
+
+input[type="checkbox"] {
+    display: none;
 }
