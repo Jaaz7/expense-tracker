@@ -16,8 +16,8 @@ function runTable() {
     const amountString = String(document.getElementById('amount').value);
     if (amount >= 100000) {
         alert('Value number is too big.');
-    } else if (amountString.includes('-')) {
-        alert("Negative numbers aren't allowed.");
+    } else if (amountString.includes('-' && 'e')) {
+        alert("Negative numbers and special characters aren't allowed.");
     } else {
         valueConfig();
         const list = document.getElementById('list');
