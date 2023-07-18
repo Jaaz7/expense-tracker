@@ -8,14 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('name').focus();
     setMaxDate();
 
-    document.getElementById('table').addEventListener('click', function (e) {
-        if (!e.target.classList.contains('delete-btn')) {
-            return;
-        } else {
-            const btn = e.target;
-            btn.closest('tr').remove();
-        }
-    });
+    document.getElementById('table').addEventListener('click', onDeleteButton);
 })
 
 /**
@@ -110,3 +103,30 @@ function onAddTable() {
     </tr>
     `;
 }
+
+//Delete the current row when the delete button is clicked, and make the maths on app header
+function onDeleteButton(e) {
+    if (!e.target.classList.contains('delete-btn')) {
+        return;
+    } else {
+        //getting the value that's about to be deleted and the values from the app head
+        const btn = e.target;
+        const amountDeleted = parseFloat(btn.parentNode.parentNode.children.item(2).innerHTML);
+        const tot = parseFloat(document.getElementById('total').innerHTML);
+        const inc = parseFloat(document.getElementById('income').innerHTML);
+        const exp = parseFloat(document.getElementById('expense').innerHTML);
+        const typeOfValue = (btn.parentNode.parentNode.children.item(3).innerHTML);
+
+        //making the math
+
+        if (typeOfValue === 'Expense') {
+            document.getElementById('expense').innerHTML = exp - amountDeleted;
+            document.getElementById('total').innerHTML = tot + amountDeleted;
+        } else {
+            document.getElementById('total').innerHTML = tot - amountDeleted;
+            document.getElementById('income').innerHTML = inc - amountDeleted;
+        }
+        //removing the current row
+        btn.closest('tr').remove();
+    }
+};

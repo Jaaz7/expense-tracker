@@ -30,7 +30,7 @@ h1 {
 /* stylizing the main (white background) */
 #main {
     background-color: white;
-    max-width: 900px;
+    width: 700px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 3em;
