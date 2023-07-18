@@ -5,9 +5,14 @@ document.addEventListener('DOMContentLoaded', function () {
         start();
     })
 
+    //automatically focus the name field when the page loads
     document.getElementById('name').focus();
-    setMaxDate();
 
+    //focusing the name field when the toggle switch is clicked
+    document.querySelector('.check-btn').addEventListener('click', function () {
+        document.getElementById('name').focus();
+    })
+    setMaxDate();
     document.getElementById('table').addEventListener('click', onDeleteButton);
 })
 
@@ -18,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
 function start() {
     const amount = Math.round(document.getElementById('amount').value * 1e2) / 1e2;
     const amountString = String(document.getElementById('amount').value);
-    if (amount >= 100000) {
-        alert('Value number is too big.');
+    if (amount > 1000000) {
+        alert('Maximum value is one million.');
     } else if (amountString.includes('-')) {
         alert("Negative numbers aren't allowed.");
     } else {
@@ -94,7 +99,7 @@ function onAddTable() {
     }
 
     tbodyEl.innerHTML += `
-    <tr>
+    <tr class="tb-row">
         <td>${name}</td>
         <td>${date}</td>
         <td>${amountNumber}</td>
@@ -104,29 +109,37 @@ function onAddTable() {
     `;
 }
 
-//Delete the current row when the delete button is clicked, and make the maths on app header
+//Delete the current row when the delete button is clicked, and do the math on app header
 function onDeleteButton(e) {
     if (!e.target.classList.contains('delete-btn')) {
         return;
     } else {
         //getting the value that's about to be deleted and the values from the app head
         const btn = e.target;
-        const amountDeleted = parseFloat(btn.parentNode.parentNode.children.item(2).innerHTML);
-        const tot = parseFloat(document.getElementById('total').innerHTML);
-        const inc = parseFloat(document.getElementById('income').innerHTML);
-        const exp = parseFloat(document.getElementById('expense').innerHTML);
+        const amountDeleted = Math.round(btn.parentNode.parentNode.children.item(2).innerHTML * 1e2) / 1e2;
+        const tot = Math.round(document.getElementById('total').innerHTML * 1e2) / 1e2;
+        const inc = Math.round(document.getElementById('income').innerHTML * 1e2) / 1e2;
+        const exp = Math.round(document.getElementById('expense').innerHTML * 1e2) / 1e2;
         const typeOfValue = (btn.parentNode.parentNode.children.item(3).innerHTML);
 
         //making the math
 
         if (typeOfValue === 'Expense') {
-            document.getElementById('expense').innerHTML = exp - amountDeleted;
-            document.getElementById('total').innerHTML = tot + amountDeleted;
+            document.getElementById('expense').innerHTML = Math.round((exp - amountDeleted) * 1e2) / 1e2;
+            document.getElementById('total').innerHTML = Math.round((tot + amountDeleted) * 1e2) / 1e2;
         } else {
-            document.getElementById('total').innerHTML = tot - amountDeleted;
-            document.getElementById('income').innerHTML = inc - amountDeleted;
+            document.getElementById('total').innerHTML = Math.round((tot - amountDeleted) * 1e2) / 1e2;
+            document.getElementById('income').innerHTML = Math.round((inc - amountDeleted) * 1e2) / 1e2;
         }
+
         //removing the current row
         btn.closest('tr').remove();
+
+        //Displaying the hprase (no values) if there are no rows in the DOM and hiding the table head
+        const rows = document.getElementsByClassName('tb-row');
+        if (rows.length === 0) {
+            document.querySelector('#no-values').style.display = 'block';
+            document.querySelector('#table').style.display = 'none';
+        }
     }
 };

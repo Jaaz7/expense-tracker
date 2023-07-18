@@ -30,7 +30,7 @@ h1 {
 /* stylizing the main (white background) */
 #main {
     background-color: white;
-    width: 700px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 3em;
@@ -270,4 +270,12 @@ input[type="checkbox"] {
     color: white;
     font-weight: 700;
     cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: rgb(118, 67, 67);
+}
+
+.delete-btn:focus {
+    background-color: rgb(190, 43, 43);
 }

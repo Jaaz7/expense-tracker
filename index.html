@@ -23,16 +23,16 @@
         <div id="app-header">
             <div id="total-balance">
                 <span class="header-text">TOTAL BALANCE<br></span>
-                <span class="header-total"><span id="total">0.00</span>€</span>
+                <span class="header-total"><span id="total">0</span>€</span>
             </div>
             <div id="income-expense">
                 <div id="app-income">
                     <span class="header-text">INCOME<br></span>
-                    <span class="header-numbers">+€<span id="income">0.00</span></span>
+                    <span class="header-numbers">+€<span id="income">0</span></span>
                 </div>
                 <div id="app-expense">
                     <span class="header-text">EXPENSE<br></span>
-                    <span class="header-numbers">-€<span id="expense">0.00</span></span>
+                    <span class="header-numbers">-€<span id="expense">0</span></span>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@
                     <div>
                         <label class="body-text" for="amount">Value<br></label>
                         <input type="number" step="any" inputmode="numeric" pattern="[0-9\.]*" autocomplete="off"
-                            id="amount" required placeholder="42" />
+                            id="amount" required placeholder="42" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
                     </div>
                 </div>
                 <div id="submit-div">
