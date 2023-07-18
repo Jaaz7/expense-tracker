@@ -104,16 +104,14 @@ function onAddTable() {
         <td>${date}</td>
         <td>${amountNumber}</td>
         <td>${typeString}</td>
-        <td><button class="delete-btn">Delete</button</td>
+        <td><button class="delete-btn">Delete</button><button class="delete-btn-mdq">X</button></td>
     </tr>
     `;
 }
 
 //Delete the current row when the delete button is clicked, and do the math on app header
 function onDeleteButton(e) {
-    if (!e.target.classList.contains('delete-btn')) {
-        return;
-    } else {
+    if (e.target.classList.contains('delete-btn') || e.target.classList.contains('delete-btn-mdq')) {
         //getting the value that's about to be deleted and the values from the app head
         const btn = e.target;
         const amountDeleted = Math.round(btn.parentNode.parentNode.children.item(2).innerHTML * 1e2) / 1e2;
@@ -135,11 +133,11 @@ function onDeleteButton(e) {
         //removing the current row
         btn.closest('tr').remove();
 
-        //Displaying the hprase (no values) if there are no rows in the DOM and hiding the table head
+        //Displaying the phrase (no values) if there are no rows in the DOM and hiding the table head
         const rows = document.getElementsByClassName('tb-row');
         if (rows.length === 0) {
             document.querySelector('#no-values').style.display = 'block';
             document.querySelector('#table').style.display = 'none';
         }
     }
-};
+}

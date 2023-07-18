@@ -79,7 +79,6 @@ h1 {
     text-align: center;
     padding: 10px;
     margin-top: 20px;
-
 }
 
 #submit {
@@ -279,3 +278,131 @@ input[type="checkbox"] {
 .delete-btn:focus {
     background-color: rgb(190, 43, 43);
 }
+
+.delete-btn-mdq {
+    display: none;
+}
+
+/*------------- media queries---------------- */
+
+@media (max-width: 540px) {
+    #main {
+        max-width: 390px;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin-bottom: -30px;
+    }
+
+    #name {
+        width: 300px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    #date {
+        width: 150px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    #amount {
+        width: 100px;
+        height: 40px;
+        font-size: 23px;
+    }
+
+    .check-btn {
+        width: 100px;
+        height: 50px;
+    }
+
+    body {
+        background-size: 200px 190px;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-attachment: fixed;
+    }
+
+    #app-header {
+        padding: 20px;
+    }
+
+    #app-body {
+        padding: 10px;
+    }
+
+    .header-text {
+        font-weight: 900;
+        font-size: 20px;
+    }
+
+    .header-total {
+        font-weight: 900;
+        font-size: 60px;
+    }
+
+    .header-numbers {
+        font-weight: 900;
+        font-size: 30px;
+    }
+
+    .body-text {
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .check-btn::before {
+        width: 32px;
+        height: 32px;
+        border-radius: 100px;
+        margin: 9px;
+    }
+
+    .header-total {
+        font-weight: 900;
+        font-size: 50px;
+    }
+
+    #table {
+        max-width: 400px;
+    }
+
+    #table thead tr {
+        font-size: 20px;
+    }
+
+    #table tbody td {
+        font-size: 15px;
+        max-width: 10px;
+        font-weight: bold;
+    }
+
+    #table th,
+    #table td {
+        padding: 10px 13px;
+    }
+
+    .delete-btn {
+        display: none;
+    }
+
+    .delete-btn-mdq {
+        display: block;
+        background-color: rgb(190, 43, 43);
+        padding: 5px 8px;
+        font-size: 10px;
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+        margin-left: -5px;
+    }
+
+    .delete-btn-mdq:focus {
+        background-color: rgb(190, 43, 43);
+    }
+
+}
+
+@media (max-width: 320px) {}

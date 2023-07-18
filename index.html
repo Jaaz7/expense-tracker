@@ -40,8 +40,8 @@
             <div id="app-body">
                 <div id="container">
                     <span>Income</span>
-                    <input id="check" type="checkbox" aria-label="toggle switch" />
-                    <label for="check" class="check-btn"></label>
+                        <input id="check" type="checkbox" aria-label="toggle switch" />
+                        <label for="check" class="check-btn"></label>
                     <span>Expense</span>
                 </div>
                 <div>
@@ -56,8 +56,9 @@
                     </div>
                     <div>
                         <label class="body-text" for="amount">Value<br></label>
-                        <input type="number" step="any" inputmode="numeric" pattern="[0-9\.]*" autocomplete="off"
-                            id="amount" required placeholder="42" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+                        <input type="number" step=".01" inputmode="numeric" pattern="[0-9\.]*" autocomplete="off"
+                            id="amount" required placeholder="42" maxlength="10"
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
                     </div>
                 </div>
                 <div id="submit-div">
