@@ -287,12 +287,13 @@ input[type="checkbox"] {
 
 @media (max-width: 540px) {
     #main {
+        margin-top: 100px;
         max-width: 390px;
     }
 
     h1 {
         font-size: 40px;
-        margin-bottom: -30px;
+        margin-bottom: -80px;
     }
 
     #name {
@@ -319,9 +320,9 @@ input[type="checkbox"] {
     }
 
     body {
-        background-size: 200px 190px;
+        background-size: 85px 85px;
         background-repeat: no-repeat;
-        background-position: top center;
+        background-position: bottom left;
         background-attachment: fixed;
     }
 
