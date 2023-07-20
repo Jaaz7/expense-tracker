@@ -1,14 +1,14 @@
 # Expense Tracker
 
 Expense Tracker is an application that helps to keep an accurate record of your money inflow and outflow.<br>
-Users can use it to see their transactions and have a better understanding of one's financial situation: how much was spent, how much was earned and what's the total balance.
+Users can utilize it to see their transactions and have a better understanding of one's financial situation: how much was spent, how much was earned and what's the total balance.
 <br>
 <br>
 <img src="https://github.com/Jaaz7/expense-tracker/assets/130407877/abf90895-24f9-43c1-96b5-37353c86fcae" width=90% height=90%>
 <br>
 ## Wireframes
 - **Planning the project**<br><br>
-  - This is the inception of the idea, I ended up adding more and tweaked around with the design for a better user experience. An expenser tracker app wouldn't be good without clear instructions of what's an expense and what's an income, putting a minus symbol to represent an expense isn't a good experience for the user so I quicky worked to change that.
+  - This is the inception of the idea, I ended up adding more and tweaked around with the design for a better user experience. An expense tracker app wouldn't be good without clear instructions of what's an expense and what's an income, putting a minus symbol in front of the amount to indicate an expense is not an optimal user experience so I quickly worked to change that.
    - <img src="https://github.com/Jaaz7/expense-tracker/assets/130407877/4ea85572-ec9f-4d5a-8714-60946bcfa3b9" width=90% height=90%>
 
 ## Features
@@ -21,8 +21,9 @@ Users can use it to see their transactions and have a better understanding of on
   - <img src="https://github.com/Jaaz7/expense-tracker/assets/130407877/f117cc93-ba50-4155-8e82-b00870095404" width=30% height=30%>
 
 - **The Submit Button**
-  - Once a value is added, the submit button will create a row with the transaction's clear information.
-  - Once a value is added, it will accurately add or subtract the numbers in the header: total, income and expense.
+  - The form only allows submission when all the inputs are correctly filled.
+  - Once a value is added and the button submitted, it will create a row with the transaction's clear information.
+  - It will also accurately add or subtract the numbers in the header: total, income and expense.
   - Improved user experience with setting the focus: the name input gets focused each time a new value is submitted.
   - <img src="https://github.com/Jaaz7/expense-tracker/assets/130407877/02fde726-28d2-4ae8-925c-8f9a06f9e926" width=10% height=10%>
 
@@ -44,11 +45,11 @@ Users can use it to see their transactions and have a better understanding of on
 ## Testing
 
   ### Bugs<br>
-  - I had in mind that I'd use a javascript 'for loop' to add and delete rows but it never really worked out as intended, so I replaced it using with template literals instead.
+  - I had in mind that I'd use a javascript 'for loop' to add and delete rows but it never really worked out as intended, so I replaced it with template literals instead.
   - Total number would appear with 10+ decimals sometimes like this "20.000000000003", so I limited the input to maximum two decimals.
-  - text inside of the "name" td in the row would overflow, fixed that with overflow-wrap in CSS so the text continues below.
-  - small delete button for small vewports wasn't deleting the row, fixed it with a "||" symbol inside the if statement to acknowledge both buttons and ereased the 'switch' condition I previously had.
-  - fixed a bug where the input value was resetting after inserting a period mark.
+  - Text inside of the "name" td in the row would overflow, fixed that with overflow-wrap in CSS so the text continues below.
+  - Small delete button for small vewports wasn't deleting the row, fixed it with a "||" symbol inside the if statement to acknowledge both buttons and erased the 'switch' condition I previously had.
+  - Fixed a bug where the input value was resetting after inserting a period mark.
 
 - **Unfixed Bugs**
   - No unfixed bugs.
@@ -68,12 +69,12 @@ Users can use it to see their transactions and have a better understanding of on
 - **The site was deployed to GitHub pages. The steps to deploy are as follows:**<br><br>
   - In the Github repository, navigate to the Settings tab
   - From the source section drop-down menu, select the Main Branch
-  - Once the main branch has been selected, the page provided the link to the completed website.
+  - Once the Main Branch has been selected, the page provided the link to the completed website.
   - The live link can be found here - https://jaaz7.github.io/expense-tracker/
 
 ## Credits
 - I used some ideas from [this](https://www.youtube.com/watch?v=vkqZC_rEkVA) tutorial for adding/deleting the rows.
-- Most of the javascript ideas / bug fixing were tackled by revewing the 'Love-Maths' project's code.
+- Most of the javascript ideas / bug fixing were tackled by reviewing the 'Love-Maths' project's code.
 - Special thanks to my colleagues for all the help provided in slack.
 - Special thanks to the tutors at Code Institute for all the help provided.
 - Special thanks to my mentor for helping me grow with this project. 
