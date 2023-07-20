@@ -3,7 +3,13 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementsByTagName('form')[0].addEventListener('submit', function (e) {
         e.preventDefault();
         start();
-    })
+    });
+
+    //limiting the number input to 10
+    const amountEl = document.querySelector('#amount');
+    amountEl.addEventListener('input', function () {
+        amountEl.value = amountEl.value.slice(0, 10);
+    });
 
     //automatically focus the name field when the page loads
     document.getElementById('name').focus();
@@ -11,10 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
     //focusing the name field when the toggle switch is clicked
     document.querySelector('.check-btn').addEventListener('click', function () {
         document.getElementById('name').focus();
-    })
+    });
     setMaxDate();
     document.getElementById('table').addEventListener('click', onDeleteButton);
-})
+});
 
 /**
  * when the submit button is clicked, this reads the inserted values
@@ -101,7 +107,7 @@ function onAddTable() {
     tbodyEl.innerHTML += `
     <tr class="tb-row">
         <td>${name}</td>
-        <td>${date}</td>
+        <td class="row-date">${date}</td>
         <td>${amountNumber}</td>
         <td>${typeString}</td>
         <td><button class="delete-btn">Delete</button><button class="delete-btn-mdq">X</button></td>
@@ -139,5 +145,6 @@ function onDeleteButton(e) {
             document.querySelector('#no-values').style.display = 'block';
             document.querySelector('#table').style.display = 'none';
         }
+        document.getElementById('name').focus();
     }
 }

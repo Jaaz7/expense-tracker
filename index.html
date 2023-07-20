@@ -8,10 +8,7 @@
     <meta name="keywords" content="expense, tracker">
     <meta name="author" content="Jaaziel do Vale">
 
-    <!-- font awesome -->
-
-
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Expense Tracker</title>
 </head>
 
@@ -40,25 +37,24 @@
             <div id="app-body">
                 <div id="container">
                     <span>Income</span>
-                        <input id="check" type="checkbox" aria-label="toggle switch" />
-                        <label for="check" class="check-btn"></label>
+                    <input id="check" type="checkbox" aria-label="toggle switch">
+                    <label for="check" class="check-btn"></label>
                     <span>Expense</span>
                 </div>
                 <div>
                     <label class="body-text" for="name">Name<br></label>
                     <input type="text" id="name" autocomplete="off" required
-                        placeholder="Book: The Hitchhiker's Guide to the Galaxy" maxlength="20" />
+                        placeholder="Book: The Hitchhiker's Guide to the Galaxy" maxlength="20">
                 </div>
                 <div id="date-amount">
                     <div>
-                        <label class="body-text" for="date" required>Date<br></label>
-                        <input type="date" required id="date" />
+                        <label class="body-text" for="date">Date<br></label>
+                        <input type="date" required id="date">
                     </div>
                     <div>
                         <label class="body-text" for="amount">Value<br></label>
-                        <input type="number" step=".01" inputmode="numeric" pattern="[0-9\.]*" autocomplete="off"
-                            id="amount" required placeholder="42" maxlength="10"
-                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+                        <input type="number" step=".01" inputmode="numeric" autocomplete="off" id="amount" required
+                            placeholder="42">
                     </div>
                 </div>
                 <div id="submit-div">
