@@ -5,12 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
         start();
     });
 
-    //limiting the number input to 10
-    const amountEl = document.querySelector('#amount');
-    amountEl.addEventListener('input', function () {
-        amountEl.value = amountEl.value.slice(0, 10);
-    });
-
     //automatically focus the name field when the page loads
     document.getElementById('name').focus();
 
