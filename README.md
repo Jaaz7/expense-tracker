@@ -51,10 +51,10 @@ Users can utilize it to see their transactions and have a better understanding o
   - Small delete button for small vewports wasn't deleting the row, fixed it with a "||" symbol inside the if statement to acknowledge both buttons and erased the 'switch' condition I previously had.
   - Fixed a bug where the input value was resetting after inserting a period mark.
 
-- **Unfixed Bugs**
+### Unfixed Bugs
   - No unfixed bugs.
 
-- **Validator Testing**
+### Validator Testing
   - The website passed within the following validating websites:
     <br><br>
     - HTML<br>
