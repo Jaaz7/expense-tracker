@@ -47,7 +47,8 @@ Users can use it to see their transactions and have a better understanding of on
   - I had in mind that I'd use a javascript 'for loop' to add and delete rows but it never really worked out as intended, so I replaced it using with template literals instead.
   - Total number would appear with 10+ decimals sometimes like this "20.000000000003", so I limited the input to maximum two decimals.
   - text inside of the "name" td in the row would overflow, fixed that with overflow-wrap in CSS so the text continues below.
-  - small delete button for small vewports wasn't deleting THE ROW, fixed it with a "||" symbol inside the if statement to acknowledge both buttons.
+  - small delete button for small vewports wasn't deleting the row, fixed it with a "||" symbol inside the if statement to acknowledge both buttons and ereased the 'switch' condition I previously had.
+  - fixed a bug where the input value was resetting after inserting a period mark.
 
 - **Unfixed Bugs**
   - No unfixed bugs.
